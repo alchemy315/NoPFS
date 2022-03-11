@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zzp/code/NoPFS/pytorch/third_party/sleef/src/common/common.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+assert.h
+-
+misc.h
+/home/zzp/code/NoPFS/pytorch/third_party/sleef/src/common/misc.h
+sys/timeb.h
+-
+sys/time.h
+-
+time.h
+-
+unistd.h
+-
+stdlib.h
+-
+malloc.h
+-
+intrin.h
+-
+
+/home/zzp/code/NoPFS/pytorch/third_party/sleef/src/common/misc.h
+stdint.h
+-
+string.h
+-
+x86intrin.h
+-
+

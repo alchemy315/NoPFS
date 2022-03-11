@@ -1,0 +1,11 @@
+prefix=/home/zzp/code/NoPFS/pytorch/torch
+exec_prefix=/home/zzp/code/NoPFS/pytorch/torch
+libdir=/home/zzp/code/NoPFS/pytorch/torch/lib
+includedir=/home/zzp/code/NoPFS/pytorch/torch/include
+
+Name: Protocol Buffers
+Description: Google's Data Interchange Format
+Version: 3.13.0.0
+Libs: -L${libdir} -lprotobuf -pthread
+Cflags: -I${includedir} -pthread
+Conflicts: protobuf-lite

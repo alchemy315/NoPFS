@@ -1,0 +1,369 @@
+`fused_weight_gradient_mlp_cuda` module not found. gradient accumulation fusion with weight gradient computation disabled.
+dist_url =  tcp://10.0.2.180:49655 
+world_rank =  0 
+world_size =  2
+process_group init
+done
+wait barrier
+done
+job is going to replica
+Namespace(backend='nccl', base_batch=256, batch_size=60, bucket_cap=25, channels_last=False, dali=False, data_dir='/home/zzp/code/NoPFS/data/imagenet', dataset='imagenet', decay=0.0001, decay_epochs=[30, 60, 80], decay_factors=[0.1, 0.1, 0.1], dist=True, drop_last=False, epochs=1, fp16=False, hdmlp=True, hdmlp_config_path='/home/zzp/code/NoPFS/libhdmlp/data/hdmlp.cfg', hdmlp_lib_path='/home/zzp/code/NoPFS/libhdmlp/build/libhdmlp.so', hdmlp_stats=True, init_path='/home/zzp/code/NoPFS/data/init_1', job_id='1', label_smoothing=0.0, local_rank=0, local_size=1, lr=0.1, momentum=0.9, no_augmentation=False, no_cudnn_bm=False, no_eval=True, no_prefetch=False, output_dir='/home/zzp/code/NoPFS/output/log/dataset-imagenet/world_size-2/local_size-1/world_rank-0/local_rank-0', primary=True, print_freq=1, profiler_path='/home/zzp/code/NoPFS/output/log/dataset-imagenet/world_size-2/local_size-1/world_rank-0/local_rank-0/trace', rendezvous='tcp', save_stats=True, seed=42, start_lr=0.1, synth_data=False, warmup_epochs=10, workers=8, world_rank=0, world_size=2)
+DistributedDataParallel(
+  (module): ResNet(
+    (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (4): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (5): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (layer4): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (downsample): Sequential(
+          (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+      )
+    )
+    (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+    (fc): Linear(in_features=2048, out_features=1000, bias=True)
+  )
+)
+Using 2 processes
+Global batch size is 120 (60 per GPU)
+Training data size: 20580
+No validation
+Starting learning rate: 0.1 | Target learning rate: 0.1 | Warmup epochs: 10
+Starting training at 2022-03-11 18:33:04
+==>> Epoch=000/001 Elapsed=0 s (avg epoch time:   nan s, current epoch:   nan s) [learning_rate=0.1000]
+[W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+    [1/172] Avg loss: 6.82357 Avg time/batch: 1.637 s Avg data fetch time/batch: 0.119 s 
+    [2/172] Avg loss: 6.67442 Avg time/batch: 1.238 s Avg data fetch time/batch: 0.115 s 
+    [3/172] Avg loss: 6.50403 Avg time/batch: 1.039 s Avg data fetch time/batch: 0.113 s 
+    [4/172] Avg loss: 6.35274 Avg time/batch: 0.919 s Avg data fetch time/batch: 0.111 s 
+    [5/172] Avg loss: 6.21953 Avg time/batch: 0.838 s Avg data fetch time/batch: 0.109 s 
+    [6/172] Avg loss: 6.12721 Avg time/batch: 0.781 s Avg data fetch time/batch: 0.108 s 
+    [7/172] Avg loss: 6.02625 Avg time/batch: 0.738 s Avg data fetch time/batch: 0.107 s 
+    [8/172] Avg loss: 5.92364 Avg time/batch: 0.704 s Avg data fetch time/batch: 0.107 s 
+    [9/172] Avg loss: 5.85461 Avg time/batch: 0.677 s Avg data fetch time/batch: 0.106 s 
+    [10/172] Avg loss: 5.80064 Avg time/batch: 0.655 s Avg data fetch time/batch: 0.106 s 
+    [11/172] Avg loss: 5.76737 Avg time/batch: 0.637 s Avg data fetch time/batch: 0.106 s 
+    [12/172] Avg loss: 5.73061 Avg time/batch: 0.621 s Avg data fetch time/batch: 0.106 s 
+    [13/172] Avg loss: 5.70006 Avg time/batch: 0.608 s Avg data fetch time/batch: 0.106 s 
+    [14/172] Avg loss: 5.66983 Avg time/batch: 0.596 s Avg data fetch time/batch: 0.105 s 
+    [15/172] Avg loss: 5.65236 Avg time/batch: 0.586 s Avg data fetch time/batch: 0.105 s 
+    [16/172] Avg loss: 5.62904 Avg time/batch: 0.577 s Avg data fetch time/batch: 0.105 s 
+    [17/172] Avg loss: 5.62311 Avg time/batch: 0.569 s Avg data fetch time/batch: 0.105 s 
+    [18/172] Avg loss: 5.60575 Avg time/batch: 0.563 s Avg data fetch time/batch: 0.106 s 
+    [19/172] Avg loss: 5.58424 Avg time/batch: 0.557 s Avg data fetch time/batch: 0.106 s 
+    [20/172] Avg loss: 5.57280 Avg time/batch: 0.551 s Avg data fetch time/batch: 0.106 s 
+    [21/172] Avg loss: 5.56466 Avg time/batch: 0.546 s Avg data fetch time/batch: 0.107 s 
+    [22/172] Avg loss: 5.54687 Avg time/batch: 0.541 s Avg data fetch time/batch: 0.106 s 
+    [23/172] Avg loss: 5.52937 Avg time/batch: 0.537 s Avg data fetch time/batch: 0.107 s 
+    [24/172] Avg loss: 5.51575 Avg time/batch: 0.533 s Avg data fetch time/batch: 0.107 s 
+    [25/172] Avg loss: 5.50057 Avg time/batch: 0.530 s Avg data fetch time/batch: 0.107 s 
+    [26/172] Avg loss: 5.48984 Avg time/batch: 0.526 s Avg data fetch time/batch: 0.107 s 
+    [27/172] Avg loss: 5.47685 Avg time/batch: 0.523 s Avg data fetch time/batch: 0.107 s 
+    [28/172] Avg loss: 5.47020 Avg time/batch: 0.520 s Avg data fetch time/batch: 0.107 s 
+    [29/172] Avg loss: 5.46651 Avg time/batch: 0.592 s Avg data fetch time/batch: 0.180 s 
+    [30/172] Avg loss: 5.45169 Avg time/batch: 0.622 s Avg data fetch time/batch: 0.178 s 
+    [31/172] Avg loss: 5.43536 Avg time/batch: 0.617 s Avg data fetch time/batch: 0.177 s 
+    [32/172] Avg loss: 5.42258 Avg time/batch: 0.612 s Avg data fetch time/batch: 0.175 s 
+    [33/172] Avg loss: 5.41387 Avg time/batch: 0.607 s Avg data fetch time/batch: 0.173 s 
+    [34/172] Avg loss: 5.40767 Avg time/batch: 0.602 s Avg data fetch time/batch: 0.171 s 
+    [35/172] Avg loss: 5.39427 Avg time/batch: 0.598 s Avg data fetch time/batch: 0.170 s 
+    [36/172] Avg loss: 5.38379 Avg time/batch: 0.593 s Avg data fetch time/batch: 0.168 s 
+    [37/172] Avg loss: 5.36831 Avg time/batch: 0.589 s Avg data fetch time/batch: 0.166 s 
+    [38/172] Avg loss: 5.36481 Avg time/batch: 0.586 s Avg data fetch time/batch: 0.165 s 
+    [39/172] Avg loss: 5.35466 Avg time/batch: 0.582 s Avg data fetch time/batch: 0.164 s 
+    [40/172] Avg loss: 5.34689 Avg time/batch: 0.579 s Avg data fetch time/batch: 0.162 s 
+    [41/172] Avg loss: 5.34148 Avg time/batch: 0.576 s Avg data fetch time/batch: 0.161 s 
+    [42/172] Avg loss: 5.33375 Avg time/batch: 0.573 s Avg data fetch time/batch: 0.160 s 
+    [43/172] Avg loss: 5.32277 Avg time/batch: 0.570 s Avg data fetch time/batch: 0.159 s 
+    [44/172] Avg loss: 5.31560 Avg time/batch: 0.567 s Avg data fetch time/batch: 0.158 s 
+    [45/172] Avg loss: 5.30706 Avg time/batch: 0.564 s Avg data fetch time/batch: 0.157 s 
+    [46/172] Avg loss: 5.29877 Avg time/batch: 0.562 s Avg data fetch time/batch: 0.156 s 
+    [47/172] Avg loss: 5.29640 Avg time/batch: 0.559 s Avg data fetch time/batch: 0.155 s 
+    [48/172] Avg loss: 5.29009 Avg time/batch: 0.557 s Avg data fetch time/batch: 0.155 s 
+    [49/172] Avg loss: 5.28092 Avg time/batch: 0.555 s Avg data fetch time/batch: 0.154 s 
+    [50/172] Avg loss: 5.27227 Avg time/batch: 0.552 s Avg data fetch time/batch: 0.153 s 
+    [51/172] Avg loss: 5.26568 Avg time/batch: 0.550 s Avg data fetch time/batch: 0.152 s 
+    [52/172] Avg loss: 5.25835 Avg time/batch: 0.548 s Avg data fetch time/batch: 0.151 s 
+    [53/172] Avg loss: 5.24764 Avg time/batch: 0.546 s Avg data fetch time/batch: 0.151 s 
+    [54/172] Avg loss: 5.24088 Avg time/batch: 0.545 s Avg data fetch time/batch: 0.150 s 
+    [55/172] Avg loss: 5.23357 Avg time/batch: 0.543 s Avg data fetch time/batch: 0.149 s 
+    [56/172] Avg loss: 5.22833 Avg time/batch: 0.541 s Avg data fetch time/batch: 0.149 s 
+    [57/172] Avg loss: 5.22108 Avg time/batch: 0.539 s Avg data fetch time/batch: 0.148 s 
+    [58/172] Avg loss: 5.21447 Avg time/batch: 0.537 s Avg data fetch time/batch: 0.147 s 
+    [59/172] Avg loss: 5.20895 Avg time/batch: 0.536 s Avg data fetch time/batch: 0.146 s 
+    [60/172] Avg loss: 5.20269 Avg time/batch: 0.534 s Avg data fetch time/batch: 0.146 s 
+    [61/172] Avg loss: 5.19518 Avg time/batch: 0.533 s Avg data fetch time/batch: 0.145 s 
+    [62/172] Avg loss: 5.18769 Avg time/batch: 0.531 s Avg data fetch time/batch: 0.144 s 
+    [63/172] Avg loss: 5.18197 Avg time/batch: 0.530 s Avg data fetch time/batch: 0.144 s 
+    [64/172] Avg loss: 5.17720 Avg time/batch: 0.528 s Avg data fetch time/batch: 0.143 s 
+    [65/172] Avg loss: 5.17253 Avg time/batch: 0.527 s Avg data fetch time/batch: 0.143 s 
+    [66/172] Avg loss: 5.16787 Avg time/batch: 0.525 s Avg data fetch time/batch: 0.142 s 
+    [67/172] Avg loss: 5.16189 Avg time/batch: 0.524 s Avg data fetch time/batch: 0.142 s 
+    [68/172] Avg loss: 5.15714 Avg time/batch: 0.523 s Avg data fetch time/batch: 0.141 s 
+    [69/172] Avg loss: 5.14874 Avg time/batch: 0.522 s Avg data fetch time/batch: 0.141 s 
+    [70/172] Avg loss: 5.14215 Avg time/batch: 0.520 s Avg data fetch time/batch: 0.140 s 
+    [71/172] Avg loss: 5.13657 Avg time/batch: 0.519 s Avg data fetch time/batch: 0.140 s 
+    [72/172] Avg loss: 5.13032 Avg time/batch: 0.518 s Avg data fetch time/batch: 0.139 s 
+    [73/172] Avg loss: 5.12627 Avg time/batch: 0.517 s Avg data fetch time/batch: 0.139 s 
+    [74/172] Avg loss: 5.12229 Avg time/batch: 0.516 s Avg data fetch time/batch: 0.138 s 
+    [75/172] Avg loss: 5.11668 Avg time/batch: 0.515 s Avg data fetch time/batch: 0.138 s 
+    [76/172] Avg loss: 5.11014 Avg time/batch: 0.514 s Avg data fetch time/batch: 0.138 s 
+    [77/172] Avg loss: 5.10505 Avg time/batch: 0.513 s Avg data fetch time/batch: 0.137 s 
+    [78/172] Avg loss: 5.10136 Avg time/batch: 0.513 s Avg data fetch time/batch: 0.137 s 
+    [79/172] Avg loss: 5.09559 Avg time/batch: 0.512 s Avg data fetch time/batch: 0.137 s 
+    [80/172] Avg loss: 5.09037 Avg time/batch: 0.511 s Avg data fetch time/batch: 0.136 s 
+    [81/172] Avg loss: 5.08460 Avg time/batch: 0.510 s Avg data fetch time/batch: 0.136 s 
+    [82/172] Avg loss: 5.07919 Avg time/batch: 0.509 s Avg data fetch time/batch: 0.136 s 
+    [83/172] Avg loss: 5.07390 Avg time/batch: 0.508 s Avg data fetch time/batch: 0.135 s 
+    [84/172] Avg loss: 5.06925 Avg time/batch: 0.508 s Avg data fetch time/batch: 0.135 s 
+    [85/172] Avg loss: 5.06767 Avg time/batch: 0.507 s Avg data fetch time/batch: 0.135 s 
+    [86/172] Avg loss: 5.06327 Avg time/batch: 0.506 s Avg data fetch time/batch: 0.134 s 
+    [87/172] Avg loss: 5.05866 Avg time/batch: 0.505 s Avg data fetch time/batch: 0.134 s 
+    [88/172] Avg loss: 5.05495 Avg time/batch: 0.504 s Avg data fetch time/batch: 0.134 s 
+    [89/172] Avg loss: 5.05055 Avg time/batch: 0.504 s Avg data fetch time/batch: 0.133 s 
+    [90/172] Avg loss: 5.04698 Avg time/batch: 0.503 s Avg data fetch time/batch: 0.133 s 
+    [91/172] Avg loss: 5.04356 Avg time/batch: 0.502 s Avg data fetch time/batch: 0.133 s 
+    [92/172] Avg loss: 5.03897 Avg time/batch: 0.502 s Avg data fetch time/batch: 0.133 s 
+    [93/172] Avg loss: 5.03435 Avg time/batch: 0.501 s Avg data fetch time/batch: 0.132 s 
+    [94/172] Avg loss: 5.02993 Avg time/batch: 0.501 s Avg data fetch time/batch: 0.132 s 
+    [95/172] Avg loss: 5.02586 Avg time/batch: 0.500 s Avg data fetch time/batch: 0.132 s 
+    [96/172] Avg loss: 5.02319 Avg time/batch: 0.499 s Avg data fetch time/batch: 0.132 s 
+    [97/172] Avg loss: 5.01967 Avg time/batch: 0.499 s Avg data fetch time/batch: 0.131 s 
+    [98/172] Avg loss: 5.01661 Avg time/batch: 0.498 s Avg data fetch time/batch: 0.131 s 
+    [99/172] Avg loss: 5.01325 Avg time/batch: 0.497 s Avg data fetch time/batch: 0.131 s 
+    [100/172] Avg loss: 5.00955 Avg time/batch: 0.497 s Avg data fetch time/batch: 0.131 s 
+    [101/172] Avg loss: 5.00770 Avg time/batch: 0.496 s Avg data fetch time/batch: 0.130 s 
+    [102/172] Avg loss: 5.00469 Avg time/batch: 0.496 s Avg data fetch time/batch: 0.130 s 
+    [103/172] Avg loss: 5.00133 Avg time/batch: 0.495 s Avg data fetch time/batch: 0.130 s 
+    [104/172] Avg loss: 4.99804 Avg time/batch: 0.495 s Avg data fetch time/batch: 0.130 s 
+    [105/172] Avg loss: 4.99462 Avg time/batch: 0.494 s Avg data fetch time/batch: 0.129 s 
+    [106/172] Avg loss: 4.99180 Avg time/batch: 0.494 s Avg data fetch time/batch: 0.129 s 
+    [107/172] Avg loss: 4.98905 Avg time/batch: 0.493 s Avg data fetch time/batch: 0.129 s 
+    [108/172] Avg loss: 4.98703 Avg time/batch: 0.493 s Avg data fetch time/batch: 0.129 s 
+    [109/172] Avg loss: 4.98478 Avg time/batch: 0.492 s Avg data fetch time/batch: 0.129 s 
+    [110/172] Avg loss: 4.98136 Avg time/batch: 0.492 s Avg data fetch time/batch: 0.128 s 
+    [111/172] Avg loss: 4.97790 Avg time/batch: 0.491 s Avg data fetch time/batch: 0.128 s 
+    [112/172] Avg loss: 4.97595 Avg time/batch: 0.491 s Avg data fetch time/batch: 0.128 s 
+    [113/172] Avg loss: 4.97339 Avg time/batch: 0.490 s Avg data fetch time/batch: 0.128 s 
+    [114/172] Avg loss: 4.97125 Avg time/batch: 0.490 s Avg data fetch time/batch: 0.128 s 
+    [115/172] Avg loss: 4.96883 Avg time/batch: 0.489 s Avg data fetch time/batch: 0.127 s 
+    [116/172] Avg loss: 4.96588 Avg time/batch: 0.489 s Avg data fetch time/batch: 0.127 s 
+    [117/172] Avg loss: 4.96399 Avg time/batch: 0.489 s Avg data fetch time/batch: 0.127 s 
+    [118/172] Avg loss: 4.96285 Avg time/batch: 0.488 s Avg data fetch time/batch: 0.127 s 
+    [119/172] Avg loss: 4.96133 Avg time/batch: 0.488 s Avg data fetch time/batch: 0.127 s 
+    [120/172] Avg loss: 4.95914 Avg time/batch: 0.487 s Avg data fetch time/batch: 0.127 s 
+    [121/172] Avg loss: 4.95599 Avg time/batch: 0.487 s Avg data fetch time/batch: 0.126 s 
+    [122/172] Avg loss: 4.95362 Avg time/batch: 0.487 s Avg data fetch time/batch: 0.126 s 
+    [123/172] Avg loss: 4.95031 Avg time/batch: 0.486 s Avg data fetch time/batch: 0.126 s 
+    [124/172] Avg loss: 4.94736 Avg time/batch: 0.486 s Avg data fetch time/batch: 0.126 s 
+    [125/172] Avg loss: 4.94443 Avg time/batch: 0.485 s Avg data fetch time/batch: 0.126 s 
+    [126/172] Avg loss: 4.94285 Avg time/batch: 0.485 s Avg data fetch time/batch: 0.126 s 
+    [127/172] Avg loss: 4.94039 Avg time/batch: 0.485 s Avg data fetch time/batch: 0.125 s 
+    [128/172] Avg loss: 4.93734 Avg time/batch: 0.484 s Avg data fetch time/batch: 0.125 s 
+    [129/172] Avg loss: 4.93570 Avg time/batch: 0.484 s Avg data fetch time/batch: 0.125 s 
+    [130/172] Avg loss: 4.93283 Avg time/batch: 0.484 s Avg data fetch time/batch: 0.125 s 
+    [131/172] Avg loss: 4.93043 Avg time/batch: 0.484 s Avg data fetch time/batch: 0.125 s 
+    [132/172] Avg loss: 4.92830 Avg time/batch: 0.483 s Avg data fetch time/batch: 0.125 s 
+    [133/172] Avg loss: 4.92650 Avg time/batch: 0.483 s Avg data fetch time/batch: 0.125 s 
+    [134/172] Avg loss: 4.92432 Avg time/batch: 0.483 s Avg data fetch time/batch: 0.125 s 
+    [135/172] Avg loss: 4.92241 Avg time/batch: 0.482 s Avg data fetch time/batch: 0.124 s 
+    [136/172] Avg loss: 4.91980 Avg time/batch: 0.482 s Avg data fetch time/batch: 0.124 s 
+    [137/172] Avg loss: 4.91778 Avg time/batch: 0.482 s Avg data fetch time/batch: 0.124 s 
+    [138/172] Avg loss: 4.91618 Avg time/batch: 0.481 s Avg data fetch time/batch: 0.124 s 
+    [139/172] Avg loss: 4.91522 Avg time/batch: 0.481 s Avg data fetch time/batch: 0.124 s 
+    [140/172] Avg loss: 4.91340 Avg time/batch: 0.481 s Avg data fetch time/batch: 0.124 s 
+    [141/172] Avg loss: 4.91155 Avg time/batch: 0.481 s Avg data fetch time/batch: 0.124 s 
+    [142/172] Avg loss: 4.90911 Avg time/batch: 0.480 s Avg data fetch time/batch: 0.124 s 
+    [143/172] Avg loss: 4.90736 Avg time/batch: 0.480 s Avg data fetch time/batch: 0.124 s 
+    [144/172] Avg loss: 4.90622 Avg time/batch: 0.480 s Avg data fetch time/batch: 0.123 s 
+    [145/172] Avg loss: 4.90377 Avg time/batch: 0.479 s Avg data fetch time/batch: 0.123 s 
+    [146/172] Avg loss: 4.90285 Avg time/batch: 0.479 s Avg data fetch time/batch: 0.123 s 
+    [147/172] Avg loss: 4.90122 Avg time/batch: 0.479 s Avg data fetch time/batch: 0.123 s 
+    [148/172] Avg loss: 4.89845 Avg time/batch: 0.479 s Avg data fetch time/batch: 0.123 s 
+    [149/172] Avg loss: 4.89658 Avg time/batch: 0.478 s Avg data fetch time/batch: 0.123 s 
+    [150/172] Avg loss: 4.89523 Avg time/batch: 0.478 s Avg data fetch time/batch: 0.123 s 
+    [151/172] Avg loss: 4.89249 Avg time/batch: 0.478 s Avg data fetch time/batch: 0.123 s 
+    [152/172] Avg loss: 4.89138 Avg time/batch: 0.478 s Avg data fetch time/batch: 0.123 s 
+    [153/172] Avg loss: 4.88980 Avg time/batch: 0.477 s Avg data fetch time/batch: 0.122 s 
+    [154/172] Avg loss: 4.88788 Avg time/batch: 0.477 s Avg data fetch time/batch: 0.122 s 
+    [155/172] Avg loss: 4.88544 Avg time/batch: 0.477 s Avg data fetch time/batch: 0.122 s 
+    [156/172] Avg loss: 4.88320 Avg time/batch: 0.477 s Avg data fetch time/batch: 0.122 s 
+    [157/172] Avg loss: 4.88204 Avg time/batch: 0.477 s Avg data fetch time/batch: 0.122 s 
+    [158/172] Avg loss: 4.88049 Avg time/batch: 0.476 s Avg data fetch time/batch: 0.122 s 
+    [159/172] Avg loss: 4.87835 Avg time/batch: 0.476 s Avg data fetch time/batch: 0.122 s 
+    [160/172] Avg loss: 4.87692 Avg time/batch: 0.476 s Avg data fetch time/batch: 0.122 s 
+    [161/172] Avg loss: 4.87568 Avg time/batch: 0.476 s Avg data fetch time/batch: 0.122 s 
+    [162/172] Avg loss: 4.87394 Avg time/batch: 0.475 s Avg data fetch time/batch: 0.122 s 
+    [163/172] Avg loss: 4.87264 Avg time/batch: 0.475 s Avg data fetch time/batch: 0.121 s 
+    [164/172] Avg loss: 4.87138 Avg time/batch: 0.475 s Avg data fetch time/batch: 0.121 s 
+    [165/172] Avg loss: 4.86952 Avg time/batch: 0.475 s Avg data fetch time/batch: 0.121 s 
+    [166/172] Avg loss: 4.86866 Avg time/batch: 0.475 s Avg data fetch time/batch: 0.121 s 
+    [167/172] Avg loss: 4.86721 Avg time/batch: 0.474 s Avg data fetch time/batch: 0.121 s 
+    [168/172] Avg loss: 4.86479 Avg time/batch: 0.474 s Avg data fetch time/batch: 0.121 s 
+    [169/172] Avg loss: 4.86339 Avg time/batch: 0.474 s Avg data fetch time/batch: 0.121 s 
+    [170/172] Avg loss: 4.86182 Avg time/batch: 0.474 s Avg data fetch time/batch: 0.121 s 
+    [171/172] Avg loss: 4.86061 Avg time/batch: 0.479 s Avg data fetch time/batch: 0.121 s 
+    **Train** Loss 4.86061
+==>> Done Elapsed=82 s (avg epoch time: 82.353 s current epoch: 82.353 s)

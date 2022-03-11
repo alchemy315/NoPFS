@@ -1,0 +1,1660 @@
+Performing C++ SOURCE FILE Test CAFFE2_NEED_TO_TURN_OFF_DEPRECATION_WARNING failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_31da2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_31da2.dir/build.make CMakeFiles/cmTC_31da2.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_31da2.dir/src.cxx.o
+/usr/bin/c++    -DCAFFE2_NEED_TO_TURN_OFF_DEPRECATION_WARNING -std=c++14   -std=gnu++14 -o CMakeFiles/cmTC_31da2.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx:1:10: fatal error: glog/stl_logging.h: No such file or directory
+ #include <glog/stl_logging.h>
+          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_31da2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_31da2.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_31da2.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_31da2/fast' failed
+make: *** [cmTC_31da2/fast] Error 2
+
+Source file was:
+#include <glog/stl_logging.h>
+    int main(int argc, char** argv) {
+      return 0;
+    }
+Performing C SOURCE FILE Test C_HAS_AVX_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b1607/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b1607.dir/build.make CMakeFiles/cmTC_b1607.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b1607.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX_1   -std=gnu11 -o CMakeFiles/cmTC_b1607.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:41:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_b1607.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b1607.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b1607.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b1607/fast' failed
+make: *** [cmTC_b1607/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX2_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_63bef/fast"
+/usr/bin/make -f CMakeFiles/cmTC_63bef.dir/build.make CMakeFiles/cmTC_63bef.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_63bef.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX2_1   -std=gnu11 -o CMakeFiles/cmTC_63bef.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:43:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_63bef.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_63bef.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_63bef.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_63bef/fast' failed
+make: *** [cmTC_63bef/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    __m256i x;
+    _mm256_extract_epi64(x, 0); // we rely on this in our AVX2 code
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0f287/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0f287.dir/build.make CMakeFiles/cmTC_0f287.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f287.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX512_1   -std=gnu11 -o CMakeFiles/cmTC_0f287.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_0f287.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0f287.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0f287.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0f287/fast' failed
+make: *** [cmTC_0f287/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512_2 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8a5e7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8a5e7.dir/build.make CMakeFiles/cmTC_8a5e7.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8a5e7.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX512_2 -mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma   -std=gnu11 -o CMakeFiles/cmTC_8a5e7.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_8a5e7.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8a5e7.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8a5e7.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8a5e7/fast' failed
+make: *** [cmTC_8a5e7/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512_3 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7d7e3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7d7e3.dir/build.make CMakeFiles/cmTC_7d7e3.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7d7e3.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX512_3 /arch:AVX512   -std=gnu11 -o CMakeFiles/cmTC_7d7e3.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /arch:AVX512: No such file or directory
+CMakeFiles/cmTC_7d7e3.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7d7e3.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7d7e3.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7d7e3/fast' failed
+make: *** [cmTC_7d7e3/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f37ce/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f37ce.dir/build.make CMakeFiles/cmTC_f37ce.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f37ce.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX_1   -std=gnu11 -o CMakeFiles/cmTC_f37ce.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:41:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_f37ce.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f37ce.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_f37ce.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f37ce/fast' failed
+make: *** [cmTC_f37ce/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX2_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2d4ef/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2d4ef.dir/build.make CMakeFiles/cmTC_2d4ef.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d4ef.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX2_1   -std=gnu11 -o CMakeFiles/cmTC_2d4ef.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:43:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_2d4ef.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2d4ef.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2d4ef.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2d4ef/fast' failed
+make: *** [cmTC_2d4ef/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    __m256i x;
+    _mm256_extract_epi64(x, 0); // we rely on this in our AVX2 code
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_190b5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_190b5.dir/build.make CMakeFiles/cmTC_190b5.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_190b5.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX512_1   -std=gnu11 -o CMakeFiles/cmTC_190b5.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_190b5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_190b5.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_190b5.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_190b5/fast' failed
+make: *** [cmTC_190b5/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512_2 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_13895/fast"
+/usr/bin/make -f CMakeFiles/cmTC_13895.dir/build.make CMakeFiles/cmTC_13895.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13895.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX512_2 -mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma   -std=gnu11 -o CMakeFiles/cmTC_13895.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_13895.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_13895.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_13895.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_13895/fast' failed
+make: *** [cmTC_13895/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512_3 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cdde0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cdde0.dir/build.make CMakeFiles/cmTC_cdde0.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cdde0.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX512_3 /arch:AVX512   -std=gnu11 -o CMakeFiles/cmTC_cdde0.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /arch:AVX512: No such file or directory
+CMakeFiles/cmTC_cdde0.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_cdde0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_cdde0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_cdde0/fast' failed
+make: *** [cmTC_cdde0/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f26bd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f26bd.dir/build.make CMakeFiles/cmTC_f26bd.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f26bd.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIE   -o CMakeFiles/cmTC_f26bd.dir/CheckSymbolExists.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f26bd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f26bd.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f26bd.dir/CheckSymbolExists.c.o  -o cmTC_f26bd 
+CMakeFiles/cmTC_f26bd.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f26bd.dir/build.make:97: recipe for target 'cmTC_f26bd' failed
+make[1]: *** [cmTC_f26bd] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f26bd/fast' failed
+make: *** [cmTC_f26bd/fast] Error 2
+
+File /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test NNPACK_ARCH_IS_X86_32 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_85378/fast"
+/usr/bin/make -f CMakeFiles/cmTC_85378.dir/build.make CMakeFiles/cmTC_85378.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_85378.dir/src.c.o
+/usr/bin/cc   -DNNPACK_ARCH_IS_X86_32   -o CMakeFiles/cmTC_85378.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:3:10: error: #error AVX only on x86_64
+         #error AVX only on x86_64
+          ^~~~~
+CMakeFiles/cmTC_85378.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_85378.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_85378.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_85378/fast' failed
+make: *** [cmTC_85378/fast] Error 2
+
+Source file was:
+
+      #if ! (defined(__i386) || defined(_M_IX86))
+        #error AVX only on x86_64
+      #endif
+      int main() {
+        return 0;
+      }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_89d4c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_89d4c.dir/build.make CMakeFiles/cmTC_89d4c.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_89d4c.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wshorten-64-to-32   -Wshorten-64-to-32 -o CMakeFiles/cmTC_89d4c.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+CMakeFiles/cmTC_89d4c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_89d4c.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_89d4c.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_89d4c/fast' failed
+make: *** [cmTC_89d4c/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WD654 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e98d1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e98d1.dir/build.make CMakeFiles/cmTC_e98d1.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e98d1.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -wd654   -wd654 -o CMakeFiles/cmTC_e98d1.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd654'
+c++: error: unrecognized command line option '-wd654'
+CMakeFiles/cmTC_e98d1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e98d1.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_e98d1.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e98d1/fast' failed
+make: *** [cmTC_e98d1/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WTHREAD_SAFETY failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bf237/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bf237.dir/build.make CMakeFiles/cmTC_bf237.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bf237.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wthread-safety   -Wthread-safety -o CMakeFiles/cmTC_bf237.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wthread-safety'; did you mean '-fthread-jumps'?
+c++: error: unrecognized command line option '-Wthread-safety'; did you mean '-fthread-jumps'?
+CMakeFiles/cmTC_bf237.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_bf237.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_bf237.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bf237/fast' failed
+make: *** [cmTC_bf237/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test UV_LINT_W4 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_76d70/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76d70.dir/build.make CMakeFiles/cmTC_76d70.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76d70.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_W4   /W4 -o CMakeFiles/cmTC_76d70.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /W4: No such file or directory
+CMakeFiles/cmTC_76d70.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_76d70.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_76d70.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_76d70/fast' failed
+make: *** [cmTC_76d70/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_UNUSED_PARAMETER_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b54fd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b54fd.dir/build.make CMakeFiles/cmTC_b54fd.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b54fd.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_UNUSED_PARAMETER_MSVC   /wd4100 -o CMakeFiles/cmTC_b54fd.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4100: No such file or directory
+CMakeFiles/cmTC_b54fd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b54fd.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b54fd.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b54fd/fast' failed
+make: *** [cmTC_b54fd/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_CONDITIONAL_CONSTANT_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_99b4e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_99b4e.dir/build.make CMakeFiles/cmTC_99b4e.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_99b4e.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_CONDITIONAL_CONSTANT_MSVC   /wd4127 -o CMakeFiles/cmTC_99b4e.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4127: No such file or directory
+CMakeFiles/cmTC_99b4e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_99b4e.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_99b4e.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_99b4e/fast' failed
+make: *** [cmTC_99b4e/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7417d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7417d.dir/build.make CMakeFiles/cmTC_7417d.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7417d.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_MSVC   /wd4201 -o CMakeFiles/cmTC_7417d.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4201: No such file or directory
+CMakeFiles/cmTC_7417d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7417d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7417d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7417d/fast' failed
+make: *** [cmTC_7417d/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d0e81/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d0e81.dir/build.make CMakeFiles/cmTC_d0e81.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0e81.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC   /wd4206 -o CMakeFiles/cmTC_d0e81.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4206: No such file or directory
+CMakeFiles/cmTC_d0e81.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d0e81.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d0e81.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d0e81/fast' failed
+make: *** [cmTC_d0e81/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3a5d8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3a5d8.dir/build.make CMakeFiles/cmTC_3a5d8.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a5d8.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC   /wd4210 -o CMakeFiles/cmTC_3a5d8.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4210: No such file or directory
+CMakeFiles/cmTC_3a5d8.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3a5d8.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3a5d8.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3a5d8/fast' failed
+make: *** [cmTC_3a5d8/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fcffd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fcffd.dir/build.make CMakeFiles/cmTC_fcffd.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fcffd.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC   /wd4232 -o CMakeFiles/cmTC_fcffd.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4232: No such file or directory
+CMakeFiles/cmTC_fcffd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_fcffd.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fcffd.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fcffd/fast' failed
+make: *** [cmTC_fcffd/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_LOCAL failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ad94d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ad94d.dir/build.make CMakeFiles/cmTC_ad94d.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ad94d.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_HIDES_LOCAL   /wd4456 -o CMakeFiles/cmTC_ad94d.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4456: No such file or directory
+CMakeFiles/cmTC_ad94d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ad94d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ad94d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ad94d/fast' failed
+make: *** [cmTC_ad94d/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_PARAM failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e6c38/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e6c38.dir/build.make CMakeFiles/cmTC_e6c38.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6c38.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_HIDES_PARAM   /wd4457 -o CMakeFiles/cmTC_e6c38.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4457: No such file or directory
+CMakeFiles/cmTC_e6c38.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e6c38.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e6c38.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e6c38/fast' failed
+make: *** [cmTC_e6c38/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_GLOBAL failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d7787/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d7787.dir/build.make CMakeFiles/cmTC_d7787.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d7787.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_HIDES_GLOBAL   /wd4459 -o CMakeFiles/cmTC_d7787.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4459: No such file or directory
+CMakeFiles/cmTC_d7787.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d7787.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d7787.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d7787/fast' failed
+make: *** [cmTC_d7787/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_962b1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_962b1.dir/build.make CMakeFiles/cmTC_962b1.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_962b1.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC   /wd4706 -o CMakeFiles/cmTC_962b1.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4706: No such file or directory
+CMakeFiles/cmTC_962b1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_962b1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_962b1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_962b1/fast' failed
+make: *** [cmTC_962b1/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_UNSAFE_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a7353/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a7353.dir/build.make CMakeFiles/cmTC_a7353.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7353.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_UNSAFE_MSVC   /wd4996 -o CMakeFiles/cmTC_a7353.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4996: No such file or directory
+CMakeFiles/cmTC_a7353.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a7353.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a7353.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a7353/fast' failed
+make: *** [cmTC_a7353/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_UTF8_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b9449/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b9449.dir/build.make CMakeFiles/cmTC_b9449.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9449.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_UTF8_MSVC   /utf-8 -o CMakeFiles/cmTC_b9449.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /utf-8: No such file or directory
+CMakeFiles/cmTC_b9449.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b9449.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b9449.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b9449/fast' failed
+make: *** [cmTC_b9449/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_VSX_FOUND failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2f568/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2f568.dir/build.make CMakeFiles/cmTC_2f568.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2f568.dir/src.c.o
+/usr/bin/cc   -fopenmp -DC_VSX_FOUND -mvsx -fPIE   -o CMakeFiles/cmTC_2f568.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option ‘-mvsx’; did you mean ‘-madx’?
+CMakeFiles/cmTC_2f568.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2f568.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2f568.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2f568/fast' failed
+make: *** [cmTC_2f568/fast] Error 2
+
+Source file was:
+ #include <altivec.h>
+      int main() {
+      float __attribute__((aligned(16))) vptr_y[8]   = { 1.0f,2.f,3.f,4.f,4.f,3.f,2.f,1.f };
+      __vector float v_result = vec_add(vec_vsx_ld(0, vptr_y), vec_vsx_ld(16, vptr_y));
+      return 0;
+      }
+Performing C++ SOURCE FILE Test CXX_VSX_FOUND failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_23a64/fast"
+/usr/bin/make -f CMakeFiles/cmTC_23a64.dir/build.make CMakeFiles/cmTC_23a64.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_23a64.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DCXX_VSX_FOUND -mvsx -fPIE   -o CMakeFiles/cmTC_23a64.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option ‘-mvsx’; did you mean ‘-madx’?
+CMakeFiles/cmTC_23a64.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_23a64.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_23a64.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_23a64/fast' failed
+make: *** [cmTC_23a64/fast] Error 2
+
+Source file was:
+ #include <altivec.h>
+      int main() {
+      float __attribute__((aligned(16))) vptr_y[8]   = { 1.0f,2.f,3.f,4.f,4.f,3.f,2.f,1.f };
+      __vector float v_result = vec_add(vec_vsx_ld(0, vptr_y), vec_vsx_ld(16, vptr_y));
+      return 0;
+      }
+Determining if the strtod_l exist failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_eb887/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eb887.dir/build.make CMakeFiles/cmTC_eb887.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb887.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fopenmp  -fPIE   -std=gnu11 -o CMakeFiles/cmTC_eb887.dir/CheckSymbolExists.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘strtod_l’ undeclared (first use in this function); did you mean ‘strtoull’?
+   return ((int*)(&strtod_l))[argc];
+                   ^~~~~~~~
+                   strtoull
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_eb887.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_eb887.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_eb887.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_eb887/fast' failed
+make: *** [cmTC_eb887/fast] Error 2
+
+File /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtod_l
+  return ((int*)(&strtod_l))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C++ SOURCE FILE Test HAS_WERROR_CAST_FUNCTION_TYPE failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6757b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6757b.dir/build.make CMakeFiles/cmTC_6757b.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6757b.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -DHAS_WERROR_CAST_FUNCTION_TYPE -fPIE   -Werror=cast-function-type -std=gnu++14 -o CMakeFiles/cmTC_6757b.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+[01m[Kcc1plus:[m[K [01;31m[Kerror: [m[K-Werror=cast-function-type: no option -Wcast-function-type
+CMakeFiles/cmTC_6757b.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6757b.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_6757b.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6757b/fast' failed
+make: *** [cmTC_6757b/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test CAFFE2_NEED_TO_TURN_OFF_DEPRECATION_WARNING failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e73d2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e73d2.dir/build.make CMakeFiles/cmTC_e73d2.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e73d2.dir/src.cxx.o
+/usr/bin/c++    -DCAFFE2_NEED_TO_TURN_OFF_DEPRECATION_WARNING -std=c++14   -std=gnu++14 -o CMakeFiles/cmTC_e73d2.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx:1:10: fatal error: glog/stl_logging.h: No such file or directory
+ #include <glog/stl_logging.h>
+          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_e73d2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e73d2.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_e73d2.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e73d2/fast' failed
+make: *** [cmTC_e73d2/fast] Error 2
+
+Source file was:
+#include <glog/stl_logging.h>
+    int main(int argc, char** argv) {
+      return 0;
+    }
+Performing C SOURCE FILE Test C_HAS_AVX_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a6a21/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a6a21.dir/build.make CMakeFiles/cmTC_a6a21.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a6a21.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX_1   -std=gnu11 -o CMakeFiles/cmTC_a6a21.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:41:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_a6a21.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a6a21.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a6a21.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a6a21/fast' failed
+make: *** [cmTC_a6a21/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX2_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f7b92/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f7b92.dir/build.make CMakeFiles/cmTC_f7b92.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7b92.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX2_1   -std=gnu11 -o CMakeFiles/cmTC_f7b92.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:43:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_f7b92.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f7b92.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_f7b92.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f7b92/fast' failed
+make: *** [cmTC_f7b92/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    __m256i x;
+    _mm256_extract_epi64(x, 0); // we rely on this in our AVX2 code
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1973e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1973e.dir/build.make CMakeFiles/cmTC_1973e.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1973e.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX512_1   -std=gnu11 -o CMakeFiles/cmTC_1973e.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_1973e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_1973e.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_1973e.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1973e/fast' failed
+make: *** [cmTC_1973e/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512_2 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7fd25/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7fd25.dir/build.make CMakeFiles/cmTC_7fd25.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7fd25.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX512_2 -mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma   -std=gnu11 -o CMakeFiles/cmTC_7fd25.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_7fd25.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7fd25.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7fd25.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7fd25/fast' failed
+make: *** [cmTC_7fd25/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test C_HAS_AVX512_3 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7fd1f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7fd1f.dir/build.make CMakeFiles/cmTC_7fd1f.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7fd1f.dir/src.c.o
+/usr/bin/cc   -DC_HAS_AVX512_3 /arch:AVX512   -std=gnu11 -o CMakeFiles/cmTC_7fd1f.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /arch:AVX512: No such file or directory
+CMakeFiles/cmTC_7fd1f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7fd1f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7fd1f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7fd1f/fast' failed
+make: *** [cmTC_7fd1f/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_78856/fast"
+/usr/bin/make -f CMakeFiles/cmTC_78856.dir/build.make CMakeFiles/cmTC_78856.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78856.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX_1   -std=gnu11 -o CMakeFiles/cmTC_78856.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:41:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avxintrin.h:1311:1: error: inlining failed in call to always_inline ‘_mm256_set1_ps’: target specific option mismatch
+ _mm256_set1_ps (float __A)
+ ^~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_set1_ps(0);
+     ~~^~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_78856.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_78856.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_78856.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_78856/fast' failed
+make: *** [cmTC_78856/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX2_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_45b94/fast"
+/usr/bin/make -f CMakeFiles/cmTC_45b94.dir/build.make CMakeFiles/cmTC_45b94.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_45b94.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX2_1   -std=gnu11 -o CMakeFiles/cmTC_45b94.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:43:0,
+                 from /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:2:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avx2intrin.h:63:1: error: inlining failed in call to always_inline ‘_mm256_abs_epi16’: target specific option mismatch
+ _mm256_abs_epi16 (__m256i __A)
+ ^~~~~~~~~~~~~~~~
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:7:7: note: called from here
+     a = _mm256_abs_epi16(a);
+     ~~^~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_45b94.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_45b94.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_45b94.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_45b94/fast' failed
+make: *** [cmTC_45b94/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    __m256i x;
+    _mm256_extract_epi64(x, 0); // we rely on this in our AVX2 code
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512_1 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3fb16/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3fb16.dir/build.make CMakeFiles/cmTC_3fb16.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3fb16.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX512_1   -std=gnu11 -o CMakeFiles/cmTC_3fb16.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_3fb16.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3fb16.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3fb16.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3fb16/fast' failed
+make: *** [cmTC_3fb16/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512_2 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c82d7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c82d7.dir/build.make CMakeFiles/cmTC_c82d7.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c82d7.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX512_2 -mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma   -std=gnu11 -o CMakeFiles/cmTC_c82d7.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: warning: implicit declaration of function ‘_mm512_set_epi8’; did you mean ‘_mm512_set1_epi8’? [-Wimplicit-function-declaration]
+     __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                 ^~~~~~~~~~~~~~~
+                 _mm512_set1_epi8
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:6:17: error: incompatible types when initializing type ‘__m512i {aka __vector(8) long long int}’ using type ‘int’
+CMakeFiles/cmTC_c82d7.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c82d7.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c82d7.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c82d7/fast' failed
+make: *** [cmTC_c82d7/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Performing C SOURCE FILE Test CXX_HAS_AVX512_3 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_eaf9f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eaf9f.dir/build.make CMakeFiles/cmTC_eaf9f.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eaf9f.dir/src.c.o
+/usr/bin/cc   -DCXX_HAS_AVX512_3 /arch:AVX512   -std=gnu11 -o CMakeFiles/cmTC_eaf9f.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /arch:AVX512: No such file or directory
+CMakeFiles/cmTC_eaf9f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_eaf9f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_eaf9f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_eaf9f/fast' failed
+make: *** [cmTC_eaf9f/fast] Error 2
+
+Source file was:
+
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_22f72/fast"
+/usr/bin/make -f CMakeFiles/cmTC_22f72.dir/build.make CMakeFiles/cmTC_22f72.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_22f72.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIE   -o CMakeFiles/cmTC_22f72.dir/CheckSymbolExists.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_22f72
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22f72.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_22f72.dir/CheckSymbolExists.c.o  -o cmTC_22f72 
+CMakeFiles/cmTC_22f72.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_22f72.dir/build.make:97: recipe for target 'cmTC_22f72' failed
+make[1]: *** [cmTC_22f72] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_22f72/fast' failed
+make: *** [cmTC_22f72/fast] Error 2
+
+File /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test NNPACK_ARCH_IS_X86_32 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fbded/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fbded.dir/build.make CMakeFiles/cmTC_fbded.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbded.dir/src.c.o
+/usr/bin/cc   -DNNPACK_ARCH_IS_X86_32   -o CMakeFiles/cmTC_fbded.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c:3:10: error: #error AVX only on x86_64
+         #error AVX only on x86_64
+          ^~~~~
+CMakeFiles/cmTC_fbded.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_fbded.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fbded.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fbded/fast' failed
+make: *** [cmTC_fbded/fast] Error 2
+
+Source file was:
+
+      #if ! (defined(__i386) || defined(_M_IX86))
+        #error AVX only on x86_64
+      #endif
+      int main() {
+        return 0;
+      }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ddb93/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ddb93.dir/build.make CMakeFiles/cmTC_ddb93.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ddb93.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wshorten-64-to-32   -Wshorten-64-to-32 -o CMakeFiles/cmTC_ddb93.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+CMakeFiles/cmTC_ddb93.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ddb93.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_ddb93.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ddb93/fast' failed
+make: *** [cmTC_ddb93/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WD654 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d4477/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d4477.dir/build.make CMakeFiles/cmTC_d4477.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d4477.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -wd654   -wd654 -o CMakeFiles/cmTC_d4477.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd654'
+c++: error: unrecognized command line option '-wd654'
+CMakeFiles/cmTC_d4477.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d4477.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_d4477.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d4477/fast' failed
+make: *** [cmTC_d4477/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WTHREAD_SAFETY failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2157a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2157a.dir/build.make CMakeFiles/cmTC_2157a.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2157a.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wthread-safety   -Wthread-safety -o CMakeFiles/cmTC_2157a.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wthread-safety'; did you mean '-fthread-jumps'?
+c++: error: unrecognized command line option '-Wthread-safety'; did you mean '-fthread-jumps'?
+CMakeFiles/cmTC_2157a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2157a.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_2157a.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2157a/fast' failed
+make: *** [cmTC_2157a/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test UV_LINT_W4 failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2b1e5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2b1e5.dir/build.make CMakeFiles/cmTC_2b1e5.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b1e5.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_W4   /W4 -o CMakeFiles/cmTC_2b1e5.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /W4: No such file or directory
+CMakeFiles/cmTC_2b1e5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2b1e5.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2b1e5.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2b1e5/fast' failed
+make: *** [cmTC_2b1e5/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_UNUSED_PARAMETER_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_76c60/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76c60.dir/build.make CMakeFiles/cmTC_76c60.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76c60.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_UNUSED_PARAMETER_MSVC   /wd4100 -o CMakeFiles/cmTC_76c60.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4100: No such file or directory
+CMakeFiles/cmTC_76c60.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_76c60.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_76c60.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_76c60/fast' failed
+make: *** [cmTC_76c60/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_CONDITIONAL_CONSTANT_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_76ba4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76ba4.dir/build.make CMakeFiles/cmTC_76ba4.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76ba4.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_CONDITIONAL_CONSTANT_MSVC   /wd4127 -o CMakeFiles/cmTC_76ba4.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4127: No such file or directory
+CMakeFiles/cmTC_76ba4.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_76ba4.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_76ba4.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_76ba4/fast' failed
+make: *** [cmTC_76ba4/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_16f9d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_16f9d.dir/build.make CMakeFiles/cmTC_16f9d.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_16f9d.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_MSVC   /wd4201 -o CMakeFiles/cmTC_16f9d.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4201: No such file or directory
+CMakeFiles/cmTC_16f9d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_16f9d.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_16f9d.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_16f9d/fast' failed
+make: *** [cmTC_16f9d/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_633b8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_633b8.dir/build.make CMakeFiles/cmTC_633b8.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_633b8.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC   /wd4206 -o CMakeFiles/cmTC_633b8.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4206: No such file or directory
+CMakeFiles/cmTC_633b8.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_633b8.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_633b8.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_633b8/fast' failed
+make: *** [cmTC_633b8/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_76f7a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76f7a.dir/build.make CMakeFiles/cmTC_76f7a.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76f7a.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC   /wd4210 -o CMakeFiles/cmTC_76f7a.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4210: No such file or directory
+CMakeFiles/cmTC_76f7a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_76f7a.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_76f7a.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_76f7a/fast' failed
+make: *** [cmTC_76f7a/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9c066/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9c066.dir/build.make CMakeFiles/cmTC_9c066.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9c066.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC   /wd4232 -o CMakeFiles/cmTC_9c066.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4232: No such file or directory
+CMakeFiles/cmTC_9c066.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9c066.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9c066.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9c066/fast' failed
+make: *** [cmTC_9c066/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_LOCAL failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7f561/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7f561.dir/build.make CMakeFiles/cmTC_7f561.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7f561.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_HIDES_LOCAL   /wd4456 -o CMakeFiles/cmTC_7f561.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4456: No such file or directory
+CMakeFiles/cmTC_7f561.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7f561.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7f561.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7f561/fast' failed
+make: *** [cmTC_7f561/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_PARAM failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_be896/fast"
+/usr/bin/make -f CMakeFiles/cmTC_be896.dir/build.make CMakeFiles/cmTC_be896.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_be896.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_HIDES_PARAM   /wd4457 -o CMakeFiles/cmTC_be896.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4457: No such file or directory
+CMakeFiles/cmTC_be896.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_be896.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_be896.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_be896/fast' failed
+make: *** [cmTC_be896/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_GLOBAL failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_66f56/fast"
+/usr/bin/make -f CMakeFiles/cmTC_66f56.dir/build.make CMakeFiles/cmTC_66f56.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_66f56.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_HIDES_GLOBAL   /wd4459 -o CMakeFiles/cmTC_66f56.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4459: No such file or directory
+CMakeFiles/cmTC_66f56.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_66f56.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_66f56.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_66f56/fast' failed
+make: *** [cmTC_66f56/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_18742/fast"
+/usr/bin/make -f CMakeFiles/cmTC_18742.dir/build.make CMakeFiles/cmTC_18742.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_18742.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC   /wd4706 -o CMakeFiles/cmTC_18742.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4706: No such file or directory
+CMakeFiles/cmTC_18742.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_18742.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_18742.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_18742/fast' failed
+make: *** [cmTC_18742/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_NO_UNSAFE_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6f21b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6f21b.dir/build.make CMakeFiles/cmTC_6f21b.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6f21b.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_NO_UNSAFE_MSVC   /wd4996 -o CMakeFiles/cmTC_6f21b.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /wd4996: No such file or directory
+CMakeFiles/cmTC_6f21b.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6f21b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6f21b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6f21b/fast' failed
+make: *** [cmTC_6f21b/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test UV_LINT_UTF8_MSVC failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fd4e9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fd4e9.dir/build.make CMakeFiles/cmTC_fd4e9.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fd4e9.dir/src.c.o
+/usr/bin/cc   -fopenmp -DUV_LINT_UTF8_MSVC   /utf-8 -o CMakeFiles/cmTC_fd4e9.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: /utf-8: No such file or directory
+CMakeFiles/cmTC_fd4e9.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_fd4e9.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fd4e9.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fd4e9/fast' failed
+make: *** [cmTC_fd4e9/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_VSX_FOUND failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8c0fd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8c0fd.dir/build.make CMakeFiles/cmTC_8c0fd.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8c0fd.dir/src.c.o
+/usr/bin/cc   -fopenmp -DNDEBUG -DC_VSX_FOUND -mvsx -fPIE   -o CMakeFiles/cmTC_8c0fd.dir/src.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option ‘-mvsx’; did you mean ‘-madx’?
+CMakeFiles/cmTC_8c0fd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8c0fd.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8c0fd.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8c0fd/fast' failed
+make: *** [cmTC_8c0fd/fast] Error 2
+
+Source file was:
+ #include <altivec.h>
+      int main() {
+      float __attribute__((aligned(16))) vptr_y[8]   = { 1.0f,2.f,3.f,4.f,4.f,3.f,2.f,1.f };
+      __vector float v_result = vec_add(vec_vsx_ld(0, vptr_y), vec_vsx_ld(16, vptr_y));
+      return 0;
+      }
+Performing C++ SOURCE FILE Test CXX_VSX_FOUND failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5df3e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5df3e.dir/build.make CMakeFiles/cmTC_5df3e.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5df3e.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DCXX_VSX_FOUND -mvsx -fPIE   -o CMakeFiles/cmTC_5df3e.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option ‘-mvsx’; did you mean ‘-madx’?
+CMakeFiles/cmTC_5df3e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_5df3e.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_5df3e.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5df3e/fast' failed
+make: *** [cmTC_5df3e/fast] Error 2
+
+Source file was:
+ #include <altivec.h>
+      int main() {
+      float __attribute__((aligned(16))) vptr_y[8]   = { 1.0f,2.f,3.f,4.f,4.f,3.f,2.f,1.f };
+      __vector float v_result = vec_add(vec_vsx_ld(0, vptr_y), vec_vsx_ld(16, vptr_y));
+      return 0;
+      }
+Determining if the strtod_l exist failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5cdea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5cdea.dir/build.make CMakeFiles/cmTC_5cdea.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5cdea.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fopenmp -DNDEBUG  -fPIE   -std=gnu11 -o CMakeFiles/cmTC_5cdea.dir/CheckSymbolExists.c.o   -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘strtod_l’ undeclared (first use in this function); did you mean ‘strtoull’?
+   return ((int*)(&strtod_l))[argc];
+                   ^~~~~~~~
+                   strtoull
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_5cdea.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_5cdea.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5cdea.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5cdea/fast' failed
+make: *** [cmTC_5cdea/fast] Error 2
+
+File /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtod_l
+  return ((int*)(&strtod_l))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C++ SOURCE FILE Test HAS_WERROR_CAST_FUNCTION_TYPE failed with the following output:
+Change Dir: /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2a1e2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2a1e2.dir/build.make CMakeFiles/cmTC_2a1e2.dir/build
+make[1]: Entering directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2a1e2.dir/src.cxx.o
+/usr/bin/c++    -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -DHAS_WERROR_CAST_FUNCTION_TYPE -fPIE   -Werror=cast-function-type -std=gnu++14 -o CMakeFiles/cmTC_2a1e2.dir/src.cxx.o -c /home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp/src.cxx
+[01m[Kcc1plus:[m[K [01;31m[Kerror: [m[K-Werror=cast-function-type: no option -Wcast-function-type
+CMakeFiles/cmTC_2a1e2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2a1e2.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_2a1e2.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2a1e2/fast' failed
+make: *** [cmTC_2a1e2/fast] Error 2
+
+Source file was:
+int main() { return 0; }

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../third_party/breakpad/src/common/linux/ucontext_constants.h
+
+/home/zzp/code/NoPFS/pytorch/third_party/breakpad/src/common/linux/breakpad_getcontext.S
+common/linux/ucontext_constants.h
+/home/zzp/code/NoPFS/pytorch/third_party/breakpad/src/common/linux/common/linux/ucontext_constants.h
+asm-mips/asm.h
+-
+asm-mips/regdef.h
+-
+asm-mips/fpregdef.h
+-
+asm/unistd.h
+-
+

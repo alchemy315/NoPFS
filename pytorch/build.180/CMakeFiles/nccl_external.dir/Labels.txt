@@ -1,0 +1,13 @@
+# Target labels
+ nccl_external
+# Source files and their labels
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/nccl_external
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/nccl_external.rule
+/home/zzp/code/NoPFS/pytorch/build/CMakeFiles/nccl_external-complete.rule
+/home/zzp/code/NoPFS/pytorch/build/nccl_external-prefix/src/nccl_external-stamp/nccl_external-install.rule
+/home/zzp/code/NoPFS/pytorch/build/nccl_external-prefix/src/nccl_external-stamp/nccl_external-mkdir.rule
+/home/zzp/code/NoPFS/pytorch/build/nccl_external-prefix/src/nccl_external-stamp/nccl_external-download.rule
+/home/zzp/code/NoPFS/pytorch/build/nccl_external-prefix/src/nccl_external-stamp/nccl_external-update.rule
+/home/zzp/code/NoPFS/pytorch/build/nccl_external-prefix/src/nccl_external-stamp/nccl_external-patch.rule
+/home/zzp/code/NoPFS/pytorch/build/nccl_external-prefix/src/nccl_external-stamp/nccl_external-configure.rule
+/home/zzp/code/NoPFS/pytorch/build/nccl_external-prefix/src/nccl_external-stamp/nccl_external-build.rule

@@ -1,0 +1,1 @@
+/usr/bin/cc  -fopenmp -DNDEBUG -Wno-ignored-qualifiers -Wno-absolute-value -Wall -Wno-unused -Wno-attributes -Wno-unused-result -Wno-psabi -ffp-contract=off -fno-math-errno -fno-trapping-math -O3 -DNDEBUG -DNDEBUG   -rdynamic -pthread CMakeFiles/addSuffix.dir/addSuffix.c.o  -o ../../bin/addSuffix 

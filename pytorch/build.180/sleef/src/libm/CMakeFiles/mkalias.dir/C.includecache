@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zzp/code/NoPFS/pytorch/third_party/sleef/src/libm/funcproto.h
+
+/home/zzp/code/NoPFS/pytorch/third_party/sleef/src/libm/mkalias.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+string.h
+-
+funcproto.h
+/home/zzp/code/NoPFS/pytorch/third_party/sleef/src/libm/funcproto.h
+
